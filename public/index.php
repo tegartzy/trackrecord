@@ -2,12 +2,13 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Tegarsatria\trackrecord\FoxMind\app\router;
-use Tegarsatria\trackrecord\FoxMind\controller\HomeController;
-use Tegarsatria\trackrecord\FoxMind\model\HomeModel;
+use Tegarsatria\trackrecord\FoxMind\controller\indexController;
+use Tegarsatria\trackrecord\FoxMind\model\indexModel;
 
-router::add('/', 'GET', HomeController::class, 'index');
-router::add('/tambah', 'GET', HomeController::class, 'formtambah');
-router::add('/tambah', 'POST', HomeController::class, 'tambahdata');
+router::add('/', 'GET', indexController::class, 'index');
+router::add('/tambahNote', 'GET', indexController::class, 'formtambah');
+router::add('/tambahNote', 'POST', indexController::class, 'tambahdata');
+router::add('/keterangan', 'GET', indexController::class, 'keterangan');
 
 router::run();
 ?>
